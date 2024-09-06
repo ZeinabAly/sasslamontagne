@@ -1,0 +1,95 @@
+footer{
+    width: 85%;
+    margin: 0 auto;
+    background: rgb(243, 240, 240);
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    @media screen and (max-width: 800px) {
+        grid-template-columns: 1fr;
+    }
+
+    form{
+        width: 80%;
+        margin: 0 auto;
+        padding: 50px 0 50px;
+        display: grid;
+        grid-template-columns: 1fr;
+
+        label{
+            margin: 15px 0;
+            text-align: left;
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: $grey2;
+            @include title;
+        }
+        input, textarea{
+            height: 45px;
+            background: transparent;
+            outline: none;
+            border: 1px solid $grey2;
+            border-radius: 2px;
+            letter-spacing: 1px;
+        }
+        textarea{
+            height: 200px;
+        }
+        .submit-container{
+            width: 100%;
+            margin: 40px auto;
+            display: flex;
+            justify-content: start;
+        }
+        
+    }
+
+    .infos-contact{
+        display: grid;
+        grid-template-columns: 1fr;
+        border-left: 1px solid $grey2;
+
+        @media screen and (max-width: 800px) {
+            border-left: 0;
+        }
+        div{
+            border-bottom: 1px solid $grey2;
+            display: grid;
+            grid-template-columns: 30% 70%;
+            align-items: center;
+            text-align: left;
+
+            @media screen and (max-width: 800px) {
+                height: 100px;
+            }
+        }
+        div:last-child{
+            border-bottom: 0;
+        }
+        h3{
+            margin: 0 50px 0;
+            @include title;
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: $grey2;
+            letter-spacing: 1px;
+        }
+        p{
+            font-size: 0.8rem;
+            color: $grey2;
+            line-height: 20px;
+        }
+    }
+    ul{
+        min-width: 200px;
+        display: flex;
+        li{
+            width: 45px;
+            height: 45px;
+            margin: 0 10px;
+            border: 1px solid $grey1;
+            border-radius: 50%;
+            @include centerChild;
+        }
+    }
+}

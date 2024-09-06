@@ -1,0 +1,91 @@
+@font-face {
+    font-family: "inter-bold";
+    src: url("../fonts/Inter/Inter_28pt-ExtraBold.ttf");
+}
+@font-face {
+    font-family: "merri";
+    src: url("../fonts/MasteringLight/Merriweather-Light.ttf");
+}
+// VARIABLES
+
+$font1: inter, sans-serif;
+$font2: merri, serif; 
+$white1: rgb(243, 243, 243);
+$black1: rgb(17, 17, 17);
+$grey1: rgb(209, 209, 209);
+$grey2: rgb(233, 233, 233);
+$grey2: rgb(105, 105, 105);
+
+
+// MIXINS
+
+@mixin title{
+    font-family: $font1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+@mixin centerChild{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    max-width: 1300px;
+    height: 100%;
+    margin: 0 auto;
+    background: $white1;
+    background: url("../img/bg.webp") fixed center/cover;
+    text-align: center;
+    font-family: $font2;
+    &::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: $black1;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        animation: animBefore 1.5s ease forwards;
+        animation-delay: 0.4s;
+    }
+
+    @keyframes animBefore{
+        to{
+            opacity: 0;
+        }
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+li{
+    list-style: none;
+}
+a, a:visited{
+    color: $white1;
+}
+
+.btn{
+    width: 170px;
+    height: 45px;
+    font-size: 0.75rem;
+    background: none;
+    border: 2px solid $black1;
+    cursor: pointer;
+    @include title;
+    transition: 0.2s;
+    font-weight: 700;
+
+    &:hover{
+        transform: scale(1.05);
+    }
+}
